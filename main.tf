@@ -52,7 +52,7 @@ resource "google_service_account" "vm_sa" {
 
 resource "google_project_iam_member" "bucket_access" {
   project = var.project
-  role    = "roles/storage.objectViewer"
+  role    = var.sa.role
   member  = "serviceAccount:${google_service_account.vm_sa.email}"
 }
 
