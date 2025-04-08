@@ -13,6 +13,8 @@ resource "google_compute_instance" "vm_instance" {
   machine_type = var.vm.machine_type
   tags         = var.vm.tags
 
+  allow_stopping_for_update = true
+
   boot_disk {
     initialize_params {
       image = var.vm.image
